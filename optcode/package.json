@@ -12,6 +12,17 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "optcode.sectionView",
+          "name": "Opt Code",
+          "icon": "media/optcode.svg",
+          "contextualTitle": "Opt Code",
+          "type": "webview"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "optcode.helloWorld",
