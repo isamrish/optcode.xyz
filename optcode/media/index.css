@@ -6,12 +6,13 @@
 .code-card {
   border: 1px solid grey;
   border-radius: 4px;
+  margin-top: 8px;
 }
 
 .code-head {
   border-bottom: 1px solid grey;
   margin: 0px;
-  padding: 12px;
+  padding: 4px 12px;
   display: flex;
   justify-content: space-between;
 }
