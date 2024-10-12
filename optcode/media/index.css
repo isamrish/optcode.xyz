@@ -2,3 +2,24 @@
   margin: 12px 0px;
   padding: 12px;
 }
+
+.code-card {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.code-head {
+  border-bottom: 1px solid grey;
+  margin: 0px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.code-head p {
+  margin: 0px;
+}
+
+.code-body {
+  padding: 12px;
+}

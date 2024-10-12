@@ -31,6 +31,10 @@ class OptCodeViewProvider implements vscode.WebviewViewProvider {
       vscode.Uri.joinPath(this._extensionUri, "media", "reset.css")
     );
 
+    const mainCss = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "media", "index.css")
+    );
+
     const nonce = getNonce();
 
     return `<!DOCTYPE html>
@@ -45,12 +49,17 @@ class OptCodeViewProvider implements vscode.WebviewViewProvider {
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link href="${resetCss}" rel="stylesheet">
+                <link href="${mainCss}" rel="stylesheet">
 				<title>Opt Code: Optimize your code using Optcode AI</title>
 			</head>
 			<body>
-				<div class="wrapper">
-                    <p>Hello world:</p>
-                </div>
+               <div class="code-card">
+                    <div class="code-head">
+                        <p>Hello world!</p>
+                        <div>X</div>
+                    </div>
+                    <div class="code-body"></div>
+               </div>
 				<script nonce="${nonce}" src="${mainJs}"></script>
 			</body>
 			</html>`;

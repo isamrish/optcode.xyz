@@ -1,3 +1,1 @@
-(function () {
-  console.log("asdadasd");
-})();
+const vscode = acquireVsCodeApi();
