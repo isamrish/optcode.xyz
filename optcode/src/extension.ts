@@ -15,6 +15,15 @@ export function activate(context: vscode.ExtensionContext) {
     )
   );
 
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "optcode.addSelectedCode",
+      (selection: string) => {
+        provider.addSelectedCode(selection);
+      }
+    )
+  );
+
   const disposable = vscode.commands.registerCommand(
     "optcode.helloWorld",
     () => {
@@ -23,6 +32,23 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(disposable);
+
+  const selectDisposable = vscode.commands.registerCommand(
+    "optcode.select",
+    function () {
+      // Get the active text editor
+      const editor = vscode.window.activeTextEditor;
+
+      if (editor) {
+        const document = editor.document;
+        const selection = editor.selection;
+        const word = document.getText(selection);
+        vscode.commands.executeCommand("optcode.addSelectedCode", word);
+      }
+    }
+  );
+
+  context.subscriptions.push(selectDisposable);
 }
 
 // This method is called when your extension is deactivated

@@ -27,6 +27,21 @@
       {
         "command": "optcode.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "optcode.select",
+        "title": "Select to Optimize"
+      },
+      {
+        "command": "optcode.addSelectedCode",
+        "title": "Selected code"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "optcode.select",
+        "key": "ctrl+r",
+        "when": "editorTextFocus"
       }
     ]
   },
